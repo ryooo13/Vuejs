@@ -1,0 +1,26 @@
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Hello Vue.js</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div id="app">
+            <p>
+                {{ message }}
+            </p>
+            <p v-if="toggle">
+                <a v-bind:href="url">url</a>
+            </p>
+            <ul v-for = "language in languages" v-bind:key="language.messages">
+               <li>{{ language.messages }}</li>
+            </ul>
+            <button v-on:click="clickHandler">ボタン</button>
+            <p>
+                <input type="text" v-model="message">
+            </p>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
