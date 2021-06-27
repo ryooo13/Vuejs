@@ -7,12 +7,19 @@
     <body>
         <div id = "app">
             <h2>TODO List</h2>
-            <form>
-                <input type="text">
-                <button>
+            <!-- 入力・送信フォームを作成する際に必要な構成要素 -->
+            <!-- <要素> v-on:イベント名='メソッド名' </要素> -->
+            <form v-on:submit.prevent>
+                <!-- formタグの部品 -->
+                <!-- v-modelディレクティブ="プロパティ名"　フォーム入力内容とvue.jsを結びつける -->
+                <input type="text" v-model="newItem">
+                <!-- ボタンがクリックされたらaddItemメソッドを呼び出す -->
+                <button v-on:click="addItem">
                     Add
                 </button>
             </form>
+            <!-- dataオブジェクトの動作確認用 -->
+            <pre>{{$data}}</pre>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
