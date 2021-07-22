@@ -20,13 +20,14 @@
             </form>
             <ul>
                 <!-- 変数 in リストの変数 -->
-                <li v-for="todo in todos">
+                <li v-for="(todo,index) in todos">
                     <input type="checkbox" v-model="todo.isDone">
-                    <span>{{todo.item}}</span>
+                    <span v-bind:class="{done: todo.isDone}">{{todo.item}}</span>
+                    <button v-on:click="deleteItem(index)">削除</button>
                 </li>
             </ul>
             <!-- dataオブジェクトの動作確認用 -->
-            <pre>{{$data}}</pre>
+            <!-- <pre>{{$data}}</pre> -->
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
