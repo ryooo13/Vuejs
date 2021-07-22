@@ -10,7 +10,8 @@ var app = new Vue({
             // newItemが空だったらここで処理終了
             if (this.newItem == '') return;
             var todo = {
-                item: this.newItem
+                item: this.newItem,
+                isDone: false
             };
 
             this.todos.push(todo);
