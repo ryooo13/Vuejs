@@ -18,6 +18,12 @@
                     Add
                 </button>
             </form>
+            <ul>
+                <!-- 変数 in リストの変数 -->
+                <li v-for="todo in todos">
+                    <span>{{todo.item}}</span>
+                </li>
+            </ul>
             <!-- dataオブジェクトの動作確認用 -->
             <pre>{{$data}}</pre>
         </div>
